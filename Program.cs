@@ -64,17 +64,18 @@ int [] Arr = new int [n];
 
 void ArrInput (int [] Array)
 {
-    for(int i = 0; i < Array.Length; i++)
-{
+    int count = Array.Length;
+    for(int i = 0; i < count; i++)
+    {
         Array [i] = new Random().Next(1,10);
-        Console.Write(Array[i]);  
-}
+        Console.Write(Array[i] + " "); 
+    }
     Console.WriteLine(); 
 }
 
 void ArraySorting(int [] Array)
 {
-    for (int i = 0; i<Array.Length -1; i++)
+    for (int i = 0; i<Array.Length - 1; i++)
     {
         int maxPos = i;
         
@@ -86,12 +87,13 @@ void ArraySorting(int [] Array)
         int Temp = Array[i];
         Array [i] = Array [maxPos];
         Array [maxPos] = Temp; 
-        
-        Console.Write(Array[i]);
+         
     }
 }
 
 ArrInput(Arr);
 ArraySorting(Arr);
+
+ArrInput(Arr);
 
 
