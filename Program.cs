@@ -53,17 +53,17 @@ int [] Array = {1,2,3,4,5,6,7,8};
 for (int i = 0; i<8; i++) Console.WriteLine($"{Array[i]}");
 */
 /*
-необязательная задача Написать программу сортировки массива от большего к меньшему.
- Массив задается размерностью N с клавиатуры, далее заполняется случайными целыми числами.
+  Необязательная задача 
+Написать программу сортировки массива от большего к меньшему. Массив задается размерностью N с клавиатуры, далее заполняется случайными целыми числами.
 */
+try{
+    Console.WriteLine("Please input a number");
+    int n = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Array :");
+    int [] Array = new int [n];
 
-Console.WriteLine("Please input a number");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Array :");
-int [] Arr = new int [n];
-
-void ArrInput (int [] Array)
-{
+    void ArrInput (int [] Array)
+    {
     int count = Array.Length;
     for(int i = 0; i < count; i++)
     {
@@ -71,29 +71,31 @@ void ArrInput (int [] Array)
         Console.Write(Array[i] + " "); 
     }
     Console.WriteLine(); 
-}
-
-void ArraySorting(int [] Array)
-{
-    for (int i = 0; i<Array.Length - 1; i++)
-    {
-        int maxPos = i;
-        
-        for (int j = i+1; j<Array.Length; j++)
-        {
-            if (Array [j] > Array [maxPos])  maxPos = j;
-          
-        }
-        int Temp = Array[i];
-        Array [i] = Array [maxPos];
-        Array [maxPos] = Temp; 
-         
     }
+
+    void ArraySorting(int [] Array)
+    {
+        for (int i = 0; i<Array.Length - 1; i++)
+        {
+            int maxPos = i;
+            for (int j = i+1; j<Array.Length; j++)
+            {
+                if (Array [j] > Array [maxPos])  maxPos = j;
+            }
+            int Temp = Array[i];
+            Array [i] = Array [maxPos];
+            Array [maxPos] = Temp; 
+            Console.Write(Array[i] + " ");
+        }
+        Console.Write(Array[n-1]);
+        Console.WriteLine();
+    }
+    ArrInput(Array);
+    ArraySorting(Array);
 }
-
-ArrInput(Arr);
-ArraySorting(Arr);
-
-ArrInput(Arr);
-
+catch
+{
+    Console.Write("It is wonderful but incorrectly. Please imput integer!");
+}
+Console.WriteLine();
 
